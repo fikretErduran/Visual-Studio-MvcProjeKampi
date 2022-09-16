@@ -24,12 +24,15 @@ namespace DataAccessLayer.Concrete.Repositories
 
         public Writer Get(Expression<Func<Writer, bool>> filter)
         {
-            throw new NotImplementedException();
+            return _object.SingleOrDefault(filter);
+
         }
 
         public void Insert(Writer p)
         {
-            _object.Add(p);
+            var addedEntity = c.Entry(p);
+            addedEntity.State = EntityState.Added;
+            //_object.Add(p);
             c.SaveChanges();
         }
 
@@ -45,6 +48,8 @@ namespace DataAccessLayer.Concrete.Repositories
 
         public void Update(Writer p)
         {
+            var updatedEntity=c.Entry(p);
+            updatedEntity.State = EntityState.Modified;
             c.SaveChanges();
         }
     }

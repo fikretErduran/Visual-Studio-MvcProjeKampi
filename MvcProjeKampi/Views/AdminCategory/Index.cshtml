@@ -10,11 +10,13 @@
     <tr>
         <th>ID</th>
         <th>Name</th>
-        <th>Description</th>    
-        
+        <th>Description</th>
+
+
         <th>Sil</th>
         <th>Guncelle</th>
         <th>Basliklar</th>
+       
     </tr>
    @foreach(var item in Model)
             {
@@ -26,6 +28,7 @@
                     <td><a href="/AdminCategory/DeleteCategory/@item.CategoryID" class="btn btn-danger">Sil</a></td>
                     <td><a href="/AdminCategory/UpdateCategory/@item.CategoryID" class="btn btn-warning">Guncelle</a></td>
                     <td><a href="#" class="btn btn-primary">Basliklar</a></td>
+                    
                 </tr>
             }
 

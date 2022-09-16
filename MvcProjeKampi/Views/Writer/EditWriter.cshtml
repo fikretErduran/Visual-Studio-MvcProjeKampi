@@ -1,0 +1,49 @@
+﻿@model EntityLayer.Concrete.Writer
+@{
+    ViewBag.Title = "EditWriter";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Writer Duzenleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("EditWriter", "Writer", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("WriterID")
+    @Html.TextBoxFor(x => x.WriterID, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("WriterName")
+    @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control" })
+    <div style="color:red">
+        @Html.ValidationMessageFor(x => x.WriterName)
+    </div>
+
+    <br />
+    @Html.Label("WriterSurName")
+    @Html.TextBoxFor(x => x.WriterSurName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.WriterSurName)
+    <br />
+    @Html.Label("Writerİmage")
+    @Html.TextBoxFor(x => x.WriterImage, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.WriterImage)
+    <br />
+    @Html.Label("WriterUnvan")
+    @Html.TextBoxFor(x => x.WriterTitle, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.WriterTitle)
+    <br />
+    @Html.Label("WriterAbout")
+    @Html.TextBoxFor(x => x.WriterAbout, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.WriterAbout)
+    <br />
+    @Html.Label("WriterMail")
+    @Html.TextBoxFor(x => x.WriterMail, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.WriterMail)
+    <br />
+    @Html.Label("WriterPassword")
+    @Html.TextBoxFor(x => x.WriterPassword, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.WriterPassword)
+    <br />
+    <button class="btn btn-success">UpdateWriter</button>
+</div>
+}
