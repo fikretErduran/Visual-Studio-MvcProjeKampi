@@ -48,10 +48,7 @@ namespace MvcProjeKampi.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult ContentByHeading()
-        {
-            return View();
-        }
+       
         [HttpGet]
         public ActionResult EditHeading(int id)
         {
@@ -65,6 +62,19 @@ namespace MvcProjeKampi.Controllers
             var headingValue = hm.GetByID(id);
             return View(headingValue);
         }
-        
+        [HttpPost]
+        public ActionResult EditHeading(Heading heading)
+        {
+            hm.UpdateHeading(heading);
+            return RedirectToAction("Index");
+        }
+        public ActionResult DeleteHeading(int id)
+        {
+            var HeadingValue = hm.GetByID(id);
+            hm.DeleteHeading(HeadingValue);
+            return RedirectToAction("Index");   
+        }
+
+
     }
 }

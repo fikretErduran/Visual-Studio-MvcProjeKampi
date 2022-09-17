@@ -5,6 +5,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 @{ string color = "";}
+
 <!DOCTYPE html>
 <html>
 
@@ -44,8 +45,11 @@
                             <th style="width: 20%">
                                 Başlık Adı
                             </th>
-                            <th style="width: 30%">
+                            <th style="width: 10%">
                                 oluşturan yazar
+                            </th>
+                            <th style="width: 10%">
+                                Status
                             </th>
 
                             <th style="width: 8%" class="text-center">
@@ -83,7 +87,7 @@
                             {
                                 color = "badge badge-success";
                             }
-
+                           
 
                         <tr>
                             <td>
@@ -106,6 +110,10 @@
 
                                 </ul>
                             </td>
+                            <td >
+                                
+                                @item.HeadingStatus
+                            </td>
 
                             <td class="project-state">
                                 <span class="@color">@item.Category.CategoryName</span>
@@ -116,12 +124,13 @@
                                     </i>
                                     Başlıklar
                                 </a>
+
                                 <a class="btn btn-warning btn-sm" href="/Heading/EditHeading/@item.HeadingID">
                                     <i class="fas fa-pencil-alt">
                                     </i>
                                     Duzenle
                                 </a>
-                                <a class="btn btn-danger btn-sm" href="#">
+                                <a class="btn btn-danger btn-sm" href="/Heading/DeleteHeading/@item.HeadingID">
                                     <i class="fas fa-trash">
                                     </i>
                                     Sil

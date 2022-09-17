@@ -25,6 +25,7 @@ namespace MvcProjeKampi.Controllers
         [HttpGet]
         public ActionResult AddWriter()
         {
+            
             return View();  
         }
         [HttpPost]
