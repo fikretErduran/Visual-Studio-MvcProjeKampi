@@ -17,10 +17,12 @@ namespace EntityLayer.Concrete
 
         public DateTime HeadingDate { get; set; }
 
+        public bool HeadingStatus { get; set; }
+
         //----------------------------------------------
         // iliski icerisine aldigin sinifda (Heading)
         // iliski kurmak istedigin sinifin ID ile ayni olmak zorunda (Category)
-       
+
         public int CategoryID { get; set; }
         public virtual  Category Category { get; set; }
         //---------------------------------------------
